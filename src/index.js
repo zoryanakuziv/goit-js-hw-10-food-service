@@ -27,7 +27,7 @@ function onInputchange(event) {
 }
 
 function toDarkThemeChange() {
-  refs.body.classList.toggle('dark-theme');
+  refs.body.classList.add('dark-theme');
   refs.body.classList.remove('light-theme');
   localStorage.setItem('theme', Theme.DARK);
 }
@@ -39,4 +39,6 @@ const checkboxLocalStorageValue = localStorage.getItem('theme');
 if (checkboxLocalStorageValue === Theme.DARK) {
   refs.checkbox.checked = true;
   toDarkThemeChange();
+} else {
+  toLightThemeChange();
 }
